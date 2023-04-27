@@ -1,17 +1,15 @@
 import Head from 'next/head'
+import NewList from '@/components/NewList'
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Hacker News" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Hacker News - News List</title>
       </Head>
 
       <main>
-
+        <NewList/>
       </main>
     </>
   )
