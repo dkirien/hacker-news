@@ -1,7 +1,9 @@
 import Head from 'next/head'
-import NewList from '@/components/NewList'
+import NewsList from '@/components/NewsList'
+import { getNews } from '@/helpers/api'
+import { NewsFields } from '@/types'
 
-export default function Home() {
+export default function Home({ news }: { news: NewsFields[] }) {
   return (
     <>
       <Head>
@@ -9,8 +11,17 @@ export default function Home() {
       </Head>
 
       <main>
-        <NewList/>
+        <NewsList items={news}/>
       </main>
     </>
   )
 }
+
+export async function getStaticProps() {
+  const news = await getNews()
+
+  return {
+    props: { news }
+  }
+}
+

@@ -11,3 +11,14 @@ export interface INewsInfoProps extends INewsInfo {
 export interface INewsInfoPageProps extends INewsInfo {
   title: string
 }
+
+export type NewsFields = {
+  by: string
+  descendants: number
+  id: number
+  score: number
+  time: number
+  title: string
+  type: string
+  url: string
+}

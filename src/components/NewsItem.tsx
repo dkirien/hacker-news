@@ -6,8 +6,10 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { CardActionArea } from '@mui/material'
 import NewsInfo from '@/components/NewsInfo'
+import { NewsFields } from '@/types'
+import { toDateString } from '@/helpers/dateFormat'
 
-const NewsItem: FC = () => {
+const NewsItem: FC<{ news: NewsFields }> = ({ news }) => {
   return (
     <Box sx={{ p: 2 }}>
       <Card sx={{
@@ -15,7 +17,7 @@ const NewsItem: FC = () => {
         backgroundColor: '#e3f2fd',
       }}
       >
-        <Link href={'/news/25'}>
+        <Link href={`/news/${news.id}`}>
           <CardActionArea>
             <CardContent>
               <Typography
@@ -23,14 +25,14 @@ const NewsItem: FC = () => {
                 gutterBottom
                 sx={{ fontSize: 20 }}
               >
-                Title
+                {news.title}
               </Typography>
 
               <NewsInfo
-                author={'Admin'}
-                date={'2023-04-27'}
-                rating={'588'}
-                comments={'300'}
+                author={news.by}
+                date={toDateString(news.time)}
+                rating={news.score.toString()}
+                comments={news.descendants.toString()}
               />
             </CardContent>
           </CardActionArea>
