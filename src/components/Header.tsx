@@ -35,9 +35,7 @@ const Header: FC = () => {
             <Link href={'/'}>Hacker News</Link>
           </Typography>
 
-          {isHome ? (
-            <Button color="inherit">Update news</Button>
-          ) : (
+          {!isHome && (
             <Button color="inherit">
               <Link href={'/'}>Back to list</Link>
             </Button>
