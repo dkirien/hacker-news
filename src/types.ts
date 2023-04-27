@@ -1,6 +1,13 @@
-export type NewsInfoProps = {
+interface INewsInfo {
   author: string
   date: string
-  rating: string
   comments: string
+}
+
+export interface INewsInfoProps extends INewsInfo {
+  rating: string
+}
+
+export interface INewsInfoPageProps extends INewsInfo {
+  title: string
 }

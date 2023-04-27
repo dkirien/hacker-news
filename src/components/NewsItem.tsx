@@ -1,14 +1,10 @@
 import { FC } from 'react'
+import Link from 'next/link'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
-import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
-import ThumbsUpDownIcon from '@mui/icons-material/ThumbsUpDown'
-import PersonIcon from '@mui/icons-material/Person'
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
-import CommentIcon from '@mui/icons-material/Comment'
+import { CardActionArea } from '@mui/material'
 import NewsInfo from '@/components/NewsInfo'
 
 const NewsItem: FC = () => {
@@ -19,33 +15,26 @@ const NewsItem: FC = () => {
         backgroundColor: '#e3f2fd',
       }}
       >
-        <CardContent sx={{ paddingBottom: '0px' }}>
-          <Typography
-            component="div"
-            gutterBottom
-            sx={{
-              fontSize: 20,
-            }}
-          >
-            Title
-          </Typography>
+        <Link href={'/news/25'}>
+          <CardActionArea>
+            <CardContent>
+              <Typography
+                component="div"
+                gutterBottom
+                sx={{ fontSize: 20 }}
+              >
+                Title
+              </Typography>
 
-          <NewsInfo
-            author={'Admin'}
-            date={'2023-04-27'}
-            rating={'588'}
-            comments={'300'}
-          />
-        </CardContent>
-
-        <CardActions>
-          <Button
-            size="small"
-            sx={{ color: 'text.primary' }}
-          >
-            Read More
-          </Button>
-        </CardActions>
+              <NewsInfo
+                author={'Admin'}
+                date={'2023-04-27'}
+                rating={'588'}
+                comments={'300'}
+              />
+            </CardContent>
+          </CardActionArea>
+        </Link>
       </Card>
     </Box>
   )

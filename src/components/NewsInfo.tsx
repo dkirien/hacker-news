@@ -5,10 +5,10 @@ import PersonIcon from '@mui/icons-material/Person'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 import CommentIcon from '@mui/icons-material/Comment'
 import Box from '@mui/material/Box'
-import { NewsInfoProps } from '@/types'
+import { INewsInfoProps } from '@/types'
 import { useMediaQuery } from '@mui/material'
 
-const NewsInfo: FC<NewsInfoProps> = ({ author, date, rating, comments }) => {
+const NewsInfo: FC<INewsInfoProps> = ({ author, date, rating, comments }) => {
   const mobileView = useMediaQuery('(max-width:600px)')
 
   return (
@@ -29,7 +29,7 @@ const NewsInfo: FC<NewsInfoProps> = ({ author, date, rating, comments }) => {
           }}
         />
 
-        <span>{author}</span>
+        <span style={{ lineHeight: '20px' }}>{author}</span>
       </Typography>
 
       <Typography
@@ -48,7 +48,7 @@ const NewsInfo: FC<NewsInfoProps> = ({ author, date, rating, comments }) => {
           }}
         />
 
-        <span>{date}</span>
+        <span style={{ lineHeight: '20px' }}>{date}</span>
       </Typography>
 
       <Typography
@@ -67,7 +67,7 @@ const NewsInfo: FC<NewsInfoProps> = ({ author, date, rating, comments }) => {
           }}
         />
 
-        <span>{rating}</span>
+        <span style={{ lineHeight: '20px' }}>{rating}</span>
       </Typography>
 
       <Typography
@@ -85,7 +85,7 @@ const NewsInfo: FC<NewsInfoProps> = ({ author, date, rating, comments }) => {
           }}
         />
 
-        <span>{comments}</span>
+        <span style={{ lineHeight: '20px' }}>{comments}</span>
       </Typography>
     </Box>
   )

@@ -1,5 +1,6 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -9,6 +10,13 @@ import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 
 const Header: FC = () => {
+  const router = useRouter()
+  const [isHome, setIsHome] = useState<boolean>(false)
+
+  useEffect(() => {
+    setIsHome(() => router.pathname === '/')
+  }, [router])
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -27,7 +35,13 @@ const Header: FC = () => {
             <Link href={'/'}>Hacker News</Link>
           </Typography>
 
-          <Button color="inherit">Login</Button>
+          {isHome ? (
+            <Button color="inherit">Update news</Button>
+          ) : (
+            <Button color="inherit">
+              <Link href={'/'}><Button color="inherit">Update news</Button></Link>
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
     </Box>
