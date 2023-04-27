@@ -11,7 +11,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 
 const Header: FC = () => {
   const router = useRouter()
-  const [isHome, setIsHome] = useState<boolean>(false)
+  const [isHome, setIsHome] = useState<boolean>(true)
 
   useEffect(() => {
     setIsHome(() => router.pathname === '/')

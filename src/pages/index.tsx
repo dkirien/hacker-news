@@ -66,6 +66,7 @@ export const getStaticProps: GetStaticProps<{ news: NewsFields[] | undefined }> 
   const news = await getNews()
 
   return {
-    props: { news }
+    props: { news },
+    revalidate: 60
   }
 }

@@ -16,3 +16,12 @@ export async function getNews(): Promise<NewsFields[] | undefined> {
     return res
   }
 }
+
+export async function getNewsById(id: string): Promise<NewsFields | undefined> {
+  if ( API_URL ) {
+    const res = await fetch(`${API_URL}/item/${id}.json`)
+    const data = await res.json()
+
+    return data
+  }
+}

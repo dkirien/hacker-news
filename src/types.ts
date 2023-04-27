@@ -22,3 +22,8 @@ export type NewsFields = {
   type: string
   url: string
 }
+
+export interface PathsParams {
+  paths: { params: { id: string } }[] | undefined
+  fallback: boolean
+}
