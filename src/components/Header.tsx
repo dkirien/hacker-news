@@ -39,7 +39,7 @@ const Header: FC = () => {
             <Button color="inherit">Update news</Button>
           ) : (
             <Button color="inherit">
-              <Link href={'/'}><Button color="inherit">Update news</Button></Link>
+              <Link href={'/'}>Back to list</Link>
             </Button>
           )}
         </Toolbar>

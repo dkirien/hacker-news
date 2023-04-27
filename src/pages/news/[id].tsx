@@ -1,11 +1,13 @@
 import { FC } from 'react'
+import Head from 'next/head'
 import Link from 'next/link'
 import { INewsInfoPageProps } from '@/types'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-import Head from 'next/head'
+import Divider from '@mui/material/Divider'
+import Comments from '@/components/Comments'
 
 const News: FC<INewsInfoPageProps> = ({ title, author, date, comments }) => {
   return (
@@ -15,10 +17,11 @@ const News: FC<INewsInfoPageProps> = ({ title, author, date, comments }) => {
       </Head>
 
       <Box sx={{ p: 2 }}>
-        <Card sx={{
-          minWidth: 275,
-          backgroundColor: '#e3f2fd',
-        }}
+        <Card
+          sx={{
+            minWidth: 275,
+            backgroundColor: '#e3f2fd',
+          }}
         >
           <CardContent>
             <Typography
@@ -43,6 +46,12 @@ const News: FC<INewsInfoPageProps> = ({ title, author, date, comments }) => {
               <span>Comments:</span>
               <span>{comments}</span>
             </Typography>
+          </CardContent>
+
+          <Divider />
+
+          <CardContent>
+            <Comments />
           </CardContent>
         </Card>
       </Box>
