@@ -17,17 +17,17 @@ a {
 }
 
 .MuiCardContent-root a:hover {
-  color: #1976d2;
+  color: #1976d2 !important;
 }
 
 .comments .Mui-disabled {
-  background-color: white;
-  opacity: 1;
-  pointer-events: auto;
+  background-color: white !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 
 .comments .MuiButtonBase-root {
-  user-select: auto;
+  user-select: auto !important;
 }
 
 .comments .Mui-disabled + .MuiCollapse-root {
@@ -35,12 +35,5 @@ a {
 }
 
 .comments .Mui-disabled .Mui-expanded {
-  margin: 12px 0;
-}
-
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+  margin: 12px 0 !important;
 }
