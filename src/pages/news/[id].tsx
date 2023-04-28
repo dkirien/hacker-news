@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Divider from '@mui/material/Divider'
-import Comments from '@/components/Comments'
+import CommentsList from '@/components/CommentsList'
 
 const News: FC<{ news: NewsFields }> = ({ news }) => {
   return (
@@ -55,8 +55,8 @@ const News: FC<{ news: NewsFields }> = ({ news }) => {
 
           <Divider />
 
-          <CardContent>
-            <Comments />
+          <CardContent sx={{position: 'relative'}}>
+            <CommentsList ids={news.kids}/>
           </CardContent>
         </Card>
       </Box>
@@ -80,7 +80,7 @@ export const getStaticPaths: () => Promise<PathsParams> = async () => {
 
   return {
     paths,
-    fallback: true
+    fallback: 'blocking'
   }
 }
 

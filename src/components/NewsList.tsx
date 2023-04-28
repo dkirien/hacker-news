@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import NewsItem from '@/components/NewsItem'
 import { NewsFields } from '@/types'
+import NewsItem from '@/components/NewsItem'
 
 const NewsList: FC<{ items: NewsFields[] }> = ({ items }) => {
   return (

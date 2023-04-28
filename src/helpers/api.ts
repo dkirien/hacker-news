@@ -1,4 +1,4 @@
-import { NewsFields } from '@/types'
+import { CommentsFields, NewsFields } from '@/types'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL
 
@@ -23,5 +23,18 @@ export async function getNewsById(id: string): Promise<NewsFields | undefined> {
     const data = await res.json()
 
     return data
+  }
+}
+
+export async function getCommentsById(idArr: number[]): Promise<CommentsFields[] | undefined> {
+  if ( API_URL ) {
+    const res: CommentsFields[] = await Promise.all(
+      idArr.map(async item => {
+        const res = await fetch(`${API_URL}/item/${item}.json`)
+        return await res.json()
+      })
+    )
+
+    return res
   }
 }

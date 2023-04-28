@@ -1,11 +1,11 @@
 import { FC } from 'react'
+import { INewsInfoProps } from '@/types'
 import Typography from '@mui/material/Typography'
 import ThumbsUpDownIcon from '@mui/icons-material/ThumbsUpDown'
 import PersonIcon from '@mui/icons-material/Person'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 import CommentIcon from '@mui/icons-material/Comment'
 import Box from '@mui/material/Box'
-import { INewsInfoProps } from '@/types'
 import { useMediaQuery } from '@mui/material'
 
 const NewsInfo: FC<INewsInfoProps> = ({ author, date, rating, comments }) => {

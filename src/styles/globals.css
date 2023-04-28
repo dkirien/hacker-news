@@ -23,7 +23,21 @@ a {
 .comments .Mui-disabled {
   background-color: white;
   opacity: 1;
+  pointer-events: auto;
 }
+
+.comments .MuiButtonBase-root {
+  user-select: auto;
+}
+
+.comments .Mui-disabled + .MuiCollapse-root {
+  height: 0 !important;
+}
+
+.comments .Mui-disabled .Mui-expanded {
+  margin: 12px 0;
+}
+
 
 @media (prefers-color-scheme: dark) {
   html {

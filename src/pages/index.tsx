@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import { getNews } from '@/helpers/api'
+import { NewsFields } from '@/types'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import NewsList from '@/components/NewsList'
-import { getNews } from '@/helpers/api'
-import { NewsFields } from '@/types'
 
 export default function Home({ news }: { news: NewsFields[] }) {
   const [loadedNews, setLoadedNews] = useState<NewsFields[]>(() => news)

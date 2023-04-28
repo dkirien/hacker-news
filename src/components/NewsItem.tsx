@@ -1,13 +1,13 @@
 import { FC } from 'react'
 import Link from 'next/link'
+import { NewsFields } from '@/types'
+import { toDateString } from '@/helpers/dateFormat'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { CardActionArea } from '@mui/material'
 import NewsInfo from '@/components/NewsInfo'
-import { NewsFields } from '@/types'
-import { toDateString } from '@/helpers/dateFormat'
 
 const NewsItem: FC<{ news: NewsFields }> = ({ news }) => {
   return (

@@ -15,6 +15,7 @@ export interface INewsInfoPageProps extends INewsInfo {
 export type NewsFields = {
   by: string
   descendants: number
+  kids: number[]
   id: number
   score: number
   time: number
@@ -23,7 +24,18 @@ export type NewsFields = {
   url: string
 }
 
+export type CommentsFields = {
+  by: string
+  id: number
+  kids: number[]
+  parent: number
+  text: string
+  time: number
+  type: string
+  dead: boolean
+}
+
 export interface PathsParams {
   paths: { params: { id: string } }[] | undefined
-  fallback: boolean
+  fallback: 'blocking'
 }
